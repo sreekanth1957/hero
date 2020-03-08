@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Tina Bot</title>
+<!-- set the base URL to access this page,for example :/botpress/
+It must match the path configured as an externalURL in botpress config, and in the init method -->
+<base href="/">
+<script src="'http://localhost:3000'/data/assets/modules/examples/channel-web/inject.js"></script>
+</head>
+<body>
+<h1>Embedded webchat </h1>
+</body>
+<script>
+ window.botpressWebChat.init({
+ host: 'http://localhost:3000',
+ botId: 'tina', //The ID for your bot
+  botName: 'Bot', // Name of your bot
+  botAvatarUrl: null, // Default avatar URL of the image (e.g., 'https://avatars3.githubusercontent.com/u/1315508?v=4&s=400' )
+  botConvoTitle: 'Technical Support', // Title of the first conversation with the bot
+  botConvoDescription: '',
+  backgroundColor: '#ffffff', // Color of the background
+  textColorOnBackground: '#666666', // Color of the text on the background
+  foregroundColor: '#0176ff', // Element background color (header, composer, button..)
+  textColorOnForeground: '#ffffff', // Element text color (header, composer, button..)
+  showUserName: false, // Whether or not to show the user's name
+  showUserAvatar: false, // Whether or not to show the user's avatar
+  enableTranscriptDownload: false, // Whether or not to show the transcript download button
+  hideWidget: true
+ /* 
+   To change the styling of the webchat,you can either edit directly 
+  default.css,or use the extraStylesheet property.
+  This allows you to customize the chat on a per-bot basis.
+ */
+ // extraStylesheet:'assets/modules/channel-web/examples/my-theme.css' 
+ })
+</script>
+
+<script> 
+  document.getElementById('show-bp').addEventListener('onclick', () => {
+    window.botpressWebChat.sendEvent({ type: 'show' })
+  })
+  document.getElementById('hide-bp').addEventListener('onclick', () => {
+    window.botpressWebChat.sendEvent({ type: 'hide' })
+  })
+</script>
+
+</html>
+
+
+
