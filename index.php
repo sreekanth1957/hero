@@ -1,2 +1,2 @@
-<?php include_once("embedded-webchat.html"); ?>
+<?php include_once("home.html"); ?>
 
